@@ -1,0 +1,50 @@
+<%- include('header.ejs') %>
+
+<body>
+
+    <div class="navbar">
+        
+        <div class="brand-name"><img src="assets/pinnacle-pages.png" alt="brand-name" height="70px"></div>
+        <div class="navbar-items">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        
+    </div>
+
+    <form method="post" action="/create-post" enctype="multipart/form-data">
+        <div class="container create-post">
+
+            <h1>Create a New Post</h1>
+
+            <div class="ip">
+                <label for="heading">Heading</label>
+                <input type="text" name="heading" placeholder="Give a heading to your post." required>
+            </div>
+
+            <div class="ip">
+                <label for="desc">Description</label>
+                <input type="text" name="desc" placeholder="Give a brief description to your post. " required>
+            </div>
+            <!-- <label for="thumb-image">Upload an image for your post</label> -->
+            
+            <div>
+                <label for="thumbnail">Upload a thumbnail</label>
+                <input type="file" id="thumbnail" name="thumbnail" required>
+            </div>
+
+            <div class="ip">
+                <label for="content">Write the contents of your post here.</label>
+                <!-- <input type="text" name="content" placeholder="Start writing here..."> -->
+                <textarea name="content" id="content" required></textarea>
+            </div>
+
+            <button class="pri-btn create-post-btn" type="submit">Create</button>
+        </div>
+
+    </form>
+
+    <%- include('footer.ejs') %>
+
+</body>

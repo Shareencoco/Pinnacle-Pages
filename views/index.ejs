@@ -1,0 +1,65 @@
+<%- include('header.ejs') %>
+
+
+<body>
+    <div class="navbar">
+        
+        <div class="brand-name"><img src="/assets/pinnacle-pages.png" alt="brand-name" height="70px"></div>
+        <div class="navbar-items">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        
+    </div>
+
+    <div class="container header-section">
+        <h1>Unleash Your Creativity!</h1>
+        <div>  <h3>Share your thoughts, stories, and ideas with the world.</h3>
+               <h3>Start blogging today!</h3>
+        </div>       
+        <div class="create-new-post">
+            <form method="get" action="/create-new-post">
+                <button class="pri-btn create-btn" type="submit">CREATE NEW</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    
+
+  <% if (posts.length>0) { %>
+    <div class="container recent-posts">
+   
+     <h1 class="recent-posts-h1"> Recent Posts</h1>
+    
+     <% posts.forEach(post => { %>   
+       <div class="new-post">
+        
+        <img class="thumbnail-img" src="<%= post.thumbnail %>" alt="Thumbnail for <%= post.heading %>">
+
+        <h2><a class="post-heading" href="/view-post/<%= post.heading %>/<%= post.id %>"><%= post.heading %></a></h4>
+        <h6 class="post-description"><%= post.description %></h6>
+        <!-- <div> post.content </div> -->
+        
+        <div class="edit-and-del-btns">
+            <form method="get" action="/edit-post/<%= post.id %>">
+                <button class="pri-btn edit-btn" type="submit">Edit</button>
+            </form>
+        
+        
+            <form method="get" action="/delete-post/<%= post.id %>?_method=DELETE" onsubmit="return confirmDelete()">
+                <button class="del-btn" type="submit">Delete</button>
+            </form>
+        </div>
+
+
+       </div> 
+    
+     <% });%>
+    </div>   
+  <% } %>
+
+    <%- include('footer.ejs') %>
+
+</body>
+</html>

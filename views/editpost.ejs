@@ -1,0 +1,41 @@
+<%- include('header.ejs') %>
+
+<body>
+
+    <div class="navbar">
+        
+        <div class="brand-name"><img src="/assets/pinnacle-pages.png" alt="brand-name" height="70px"></div>
+        <div class="navbar-items">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    
+    </div>
+
+    <form method="post" action="/update-post/<%= postToEdit.id %>">
+        <div class="container update-post">        
+            
+            <h1>Update Your Post</h1>
+
+            <div class="ip">
+                <label for="heading">Heading</label>
+                <input type="text" name="heading" value="<%= postToEdit.heading %>">
+            </div>
+  
+            <div class="ip"> 
+                <label for="desc">Description</label>
+                <input type="text" name="desc" value="<%= postToEdit.description %>">
+            </div>
+                <!-- <label for="thumb-image">Upload an image for your post</label> -->
+            <div class="ip">       
+                <label for="content">Write the contents of your post here.</label>
+                <!-- <input type="text" name="content" placeholder="Start writing here..."> -->
+                <textarea name="content" id="content"><%= postToEdit.content %></textarea>
+            </div>
+                <button class="pri-btn update-post-btn" type="submit" >Update</button>
+        </div>
+    </form>
+
+    <%- include('footer.ejs') %>
+</body>

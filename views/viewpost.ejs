@@ -1,0 +1,26 @@
+<%- include('header.ejs') %>
+
+<body>
+    <div class="navbar">
+        
+        <div class="brand-name"><img src="/assets/pinnacle-pages.png" alt="brand-name" height="70px"></div>
+        <div class="navbar-items">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        
+    </div>
+
+
+    <div class="container view-post">
+        <h1><%=postToView.heading%></h1>
+        <img class="thumbnail-img" src="<%= postToView.thumbnail %>" alt="Thumbnail for <%= postToView.heading %>">
+        <h3><%=postToView.description%></h3>
+        <div><%=postToView.content%></div>
+    </div>
+
+    <%- include('footer.ejs') %>
+
+
+</body>
