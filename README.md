@@ -133,6 +133,3 @@ Contributions are welcome! Please fork this repository and submit a pull request
 
 - Thanks to the Express.js and EJS teams for their wonderful tools.
 
----
-
-Feel free to customize this README further based on any additional features or requirements for your project.
