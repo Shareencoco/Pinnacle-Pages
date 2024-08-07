@@ -79,7 +79,7 @@ Pinnacle-Pages/
 
 ### Adding a New Post
 
-In `app.js`:
+In `index.js`:
 ```javascript
 app.post("/create-post", (req, res) => {
     const newPost = {
@@ -96,7 +96,7 @@ app.post("/create-post", (req, res) => {
 
 ### Deleting a Post
 
-In `app.js`:
+In `index.js`:
 ```javascript
 app.delete("/delete-post/:id", (req, res) => {
     const postId = parseInt(req.params.id);
@@ -107,7 +107,7 @@ app.delete("/delete-post/:id", (req, res) => {
 
 ### Editing a Post
 
-In `app.js`:
+In `index.js`:
 ```javascript
 app.patch("/update-post/:id", (req, res) => {
     const postId = parseInt(req.params.id);
